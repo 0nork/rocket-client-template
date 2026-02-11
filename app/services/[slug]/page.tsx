@@ -34,7 +34,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const services = await getServices();
   const service = services.find((s) => s.slug === slug);
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
 
   if (!service) return { title: "Service Not Found" };
 
@@ -50,7 +50,7 @@ export default async function ServiceDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
   const services = await getServices();
   const service = services.find((s) => s.slug === slug);
 
@@ -58,7 +58,7 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <Header siteName={config.name} phone={config.phone} />
+      <Header siteName={config.name} phone={config.phone} logoImageId={config.logoImageId} />
       <main className="min-h-screen">
         <article className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({
           </div>
         </article>
       </main>
-      <Footer siteName={config.name} phone={config.phone} email={config.email} />
+      <Footer siteName={config.name} phone={config.phone} email={config.email} logoImageId={config.logoImageId} />
     </>
   );
 }

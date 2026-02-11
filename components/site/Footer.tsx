@@ -1,13 +1,16 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail } from "lucide-react";
+import { getPublicUrl } from "@/lib/drive-utils";
 
 interface FooterProps {
   siteName: string;
   phone?: string;
   email?: string;
+  logoImageId?: string;
 }
 
-export function Footer({ siteName, phone, email }: FooterProps) {
+export function Footer({ siteName, phone, email, logoImageId }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
@@ -16,7 +19,20 @@ export function Footer({ siteName, phone, email }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-3">{siteName}</h3>
+            {logoImageId ? (
+              <div className="mb-3">
+                <Image
+                  src={getPublicUrl(logoImageId)}
+                  alt={siteName}
+                  width={140}
+                  height={40}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                  unoptimized
+                />
+              </div>
+            ) : (
+              <h3 className="text-white text-lg font-bold mb-3">{siteName}</h3>
+            )}
             <p className="text-sm text-gray-400 mb-4">
               Professional services you can trust. Quality work, fair prices,
               and customer satisfaction guaranteed.

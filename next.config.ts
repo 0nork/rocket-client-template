@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "lh3.googleusercontent.com",
       },
+      {
+        // Allow images from imported sites (any HTTPS host)
+        protocol: "https",
+        hostname: "**",
+      },
     ],
   },
 };

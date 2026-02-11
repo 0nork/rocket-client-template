@@ -7,7 +7,7 @@ import { getSheetData } from "@/lib/google/sheets";
 export const revalidate = 300;
 
 export default async function PortfolioPage() {
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
   let items: Record<string, string>[] = [];
 
   try {
@@ -18,7 +18,7 @@ export default async function PortfolioPage() {
 
   return (
     <>
-      <Header siteName={config.name} phone={config.phone} />
+      <Header siteName={config.name} phone={config.phone} logoImageId={config.logoImageId} />
       <main className="min-h-screen">
         <section className="bg-gradient-to-b from-gray-50 to-white py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +49,7 @@ export default async function PortfolioPage() {
           </div>
         </section>
       </main>
-      <Footer siteName={config.name} phone={config.phone} email={config.email} />
+      <Footer siteName={config.name} phone={config.phone} email={config.email} logoImageId={config.logoImageId} />
     </>
   );
 }

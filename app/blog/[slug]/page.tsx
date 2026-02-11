@@ -30,7 +30,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const posts = await getPosts();
   const post = posts.find((p) => p.slug === slug);
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
 
   if (!post) return { title: "Post Not Found" };
 
@@ -52,7 +52,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
   const posts = await getPosts();
   const post = posts.find((p) => p.slug === slug);
 
@@ -60,7 +60,7 @@ export default async function BlogPostPage({
 
   return (
     <>
-      <Header siteName={config.name} phone={config.phone} />
+      <Header siteName={config.name} phone={config.phone} logoImageId={config.logoImageId} />
       <main className="min-h-screen py-20">
         <BlogPost
           title={post.title}
@@ -72,7 +72,7 @@ export default async function BlogPostPage({
           content={post.content}
         />
       </main>
-      <Footer siteName={config.name} phone={config.phone} email={config.email} />
+      <Footer siteName={config.name} phone={config.phone} email={config.email} logoImageId={config.logoImageId} />
     </>
   );
 }

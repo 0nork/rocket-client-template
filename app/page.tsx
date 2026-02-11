@@ -11,7 +11,7 @@ import { ArrowRight } from "lucide-react";
 export const revalidate = 300;
 
 export default async function HomePage() {
-  const config = getSiteConfig();
+  const config = await getSiteConfig();
 
   let services: Record<string, string>[] = [];
   let testimonials: Record<string, string>[] = [];
@@ -25,7 +25,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Header siteName={config.name} phone={config.phone} />
+      <Header siteName={config.name} phone={config.phone} logoImageId={config.logoImageId} />
 
       <main>
         <Hero
@@ -132,6 +132,7 @@ export default async function HomePage() {
         siteName={config.name}
         phone={config.phone}
         email={config.email}
+        logoImageId={config.logoImageId}
       />
     </>
   );

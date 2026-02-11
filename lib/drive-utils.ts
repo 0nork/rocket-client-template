@@ -12,10 +12,17 @@ export interface DriveFile {
   createdTime?: string;
 }
 
-export function getPublicUrl(fileId: string): string {
-  return `https://drive.google.com/uc?export=view&id=${fileId}`;
+export function getPublicUrl(fileIdOrUrl: string): string {
+  // If it's already a full URL (e.g. from an imported site), return as-is
+  if (fileIdOrUrl.startsWith("http://") || fileIdOrUrl.startsWith("https://")) {
+    return fileIdOrUrl;
+  }
+  return `https://drive.google.com/uc?export=view&id=${fileIdOrUrl}`;
 }
 
-export function getThumbnailUrl(fileId: string, size: number = 400): string {
-  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w${size}`;
+export function getThumbnailUrl(fileIdOrUrl: string, size: number = 400): string {
+  if (fileIdOrUrl.startsWith("http://") || fileIdOrUrl.startsWith("https://")) {
+    return fileIdOrUrl;
+  }
+  return `https://drive.google.com/thumbnail?id=${fileIdOrUrl}&sz=w${size}`;
 }

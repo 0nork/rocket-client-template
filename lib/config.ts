@@ -35,3 +35,24 @@ export function getIntegrationStatus() {
     crmTracking: !!process.env.NEXT_PUBLIC_CRM_TRACKING_ID,
   };
 }
+
+/**
+ * Check if the initial setup wizard has been completed.
+ * Returns false if Google credentials aren't set or setup_complete isn't true in Sheet.
+ */
+export async function isSetupComplete(): Promise<boolean> {
+  if (
+    !process.env.GOOGLE_SERVICE_ACCOUNT_KEY ||
+    !process.env.GOOGLE_SHEETS_ID
+  ) {
+    return false;
+  }
+
+  try {
+    const { getSiteConfigFromSheet } = await import("@/lib/google/sheets");
+    const config = await getSiteConfigFromSheet();
+    return config["setup_complete"] === "true";
+  } catch {
+    return false;
+  }
+}
