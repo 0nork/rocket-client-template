@@ -1,4 +1,5 @@
 import { unstable_cache } from "next/cache";
+import { CLIENT } from "./client.config";
 
 export interface SiteConfig {
   name: string;
@@ -17,15 +18,15 @@ export interface SiteConfig {
 }
 
 const DEFAULTS: SiteConfig = {
-  name: "Wall Works",
-  phone: "(555) 555-5555",
-  email: "info@wallworkshardscape.com",
-  url: "https://wallworkshardscape.com",
-  tagline: "Expert Retaining Walls & Masonry — Westmoreland County",
+  name: CLIENT.name,
+  phone: CLIENT.phone,
+  email: CLIENT.email,
+  url: CLIENT.url,
+  tagline: CLIENT.tagline,
   colors: {
-    primary: "#1a1a1a",
-    secondary: "#ffffff",
-    accent: "#dc2626",
+    primary: CLIENT.colors.primary,
+    secondary: CLIENT.colors.secondary,
+    accent: CLIENT.colors.accent,
   },
 };
 

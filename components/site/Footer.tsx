@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { getPublicUrl } from "@/lib/drive-utils";
+import { CLIENT } from "@/config/client.config";
 
 interface FooterProps {
   siteName: string;
@@ -34,8 +35,7 @@ export function Footer({ siteName, phone, email, logoImageId }: FooterProps) {
               <h3 className="text-white text-lg font-bold mb-3">{siteName}</h3>
             )}
             <p className="text-sm text-gray-400 mb-4">
-              Expert retaining walls, stone masonry, and hardscape services
-              in Westmoreland County. Quality craftsmanship guaranteed.
+              {CLIENT.footerText}
             </p>
           </div>
 
