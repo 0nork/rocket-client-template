@@ -17,15 +17,15 @@ export interface SiteConfig {
 }
 
 const DEFAULTS: SiteConfig = {
-  name: "Business Name",
+  name: "Wall Works",
   phone: "(555) 555-5555",
-  email: "info@example.com",
-  url: "https://example.com",
-  tagline: "Professional Services You Can Trust",
+  email: "info@wallworkshardscape.com",
+  url: "https://wallworkshardscape.com",
+  tagline: "Expert Retaining Walls & Masonry — Westmoreland County",
   colors: {
-    primary: "#2563eb",
-    secondary: "#1e40af",
-    accent: "#f59e0b",
+    primary: "#1a1a1a",
+    secondary: "#ffffff",
+    accent: "#dc2626",
   },
 };
 

@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getSiteConfig();
   return {
-    title: config.name || "Rocket Client Site",
-    description: `Professional services by ${config.name || "our team"}. Quality work, fair prices, satisfaction guaranteed.`,
+    title: config.name || "Wall Works Hardscape",
+    description: `Expert retaining walls & masonry by ${config.name || "Wall Works"} in Westmoreland County. Quality craftsmanship guaranteed.`,
   };
 }
 

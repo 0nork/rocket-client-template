@@ -10,7 +10,7 @@ import { ContentGenerationStep } from "./ContentGenerationStep";
 import { IntegrationsStep } from "./IntegrationsStep";
 import { CompletionStep } from "./CompletionStep";
 
-const STORAGE_KEY = "rocket-setup-wizard";
+const STORAGE_KEY = "wallworks-setup-wizard";
 
 interface WizardState {
   currentStep: number;
@@ -97,9 +97,9 @@ export function SetupWizard() {
         website: info.url,
         tagline: info.tagline,
         industry: info.industry,
-        primary_color: state.branding.primary || "#2563eb",
-        secondary_color: state.branding.secondary || "#1e40af",
-        accent_color: state.branding.accent || "#f59e0b",
+        primary_color: state.branding.primary || "#1a1a1a",
+        secondary_color: state.branding.secondary || "#ffffff",
+        accent_color: state.branding.accent || "#dc2626",
         crm_tracking_id: state.crmApiKey || "",
         cro9_key: state.cro9Key || "",
         setup_complete: "true",
@@ -116,9 +116,9 @@ export function SetupWizard() {
       NEXT_PUBLIC_SITE_EMAIL: info.email,
       NEXT_PUBLIC_SITE_URL: info.url || "",
       NEXT_PUBLIC_SITE_TAGLINE: info.tagline || "",
-      NEXT_PUBLIC_COLOR_PRIMARY: state.branding.primary || "#2563eb",
-      NEXT_PUBLIC_COLOR_SECONDARY: state.branding.secondary || "#1e40af",
-      NEXT_PUBLIC_COLOR_ACCENT: state.branding.accent || "#f59e0b",
+      NEXT_PUBLIC_COLOR_PRIMARY: state.branding.primary || "#1a1a1a",
+      NEXT_PUBLIC_COLOR_SECONDARY: state.branding.secondary || "#ffffff",
+      NEXT_PUBLIC_COLOR_ACCENT: state.branding.accent || "#dc2626",
     };
 
     if (state.geminiKey) envVars.GEMINI_API_KEY = state.geminiKey;
