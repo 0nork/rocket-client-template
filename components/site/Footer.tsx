@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
 import { getPublicUrl } from "@/lib/drive-utils";
+import { CLIENT } from "@/config/client.config";
 
 interface FooterProps {
   siteName: string;
@@ -34,8 +35,7 @@ export function Footer({ siteName, phone, email, logoImageId }: FooterProps) {
               <h3 className="text-white text-lg font-bold mb-3">{siteName}</h3>
             )}
             <p className="text-sm text-gray-400 mb-4">
-              Professional services you can trust. Quality work, fair prices,
-              and customer satisfaction guaranteed.
+              {CLIENT.footerText}
             </p>
           </div>
 
@@ -91,15 +91,7 @@ export function Footer({ siteName, phone, email, logoImageId }: FooterProps) {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
-          &copy; {year} {siteName}. All rights reserved. Powered by{" "}
-          <a
-            href="https://rocketclients.com"
-            className="text-blue-400 hover:text-blue-300"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Rocket+
-          </a>
+          &copy; {year} {siteName}. All rights reserved.
         </div>
       </div>
     </footer>

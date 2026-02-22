@@ -1,5 +1,6 @@
 import { generateContent } from "@/lib/gemini";
 import { SHEETS_SCHEMA } from "@/config/sheets-schema";
+import { CLIENT } from "@/config/client.config";
 
 // ── Types ───────────────────────────────────────────────────
 
@@ -166,7 +167,7 @@ async function fetchPage(url: string): Promise<string | null> {
       signal: controller.signal,
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; RocketBot/1.0; +https://rocketclients.com)",
+          `Mozilla/5.0 (compatible; ${CLIENT.name.replace(/\s/g, "")}Bot/1.0; +${CLIENT.url})`,
         Accept: "text/html,application/xhtml+xml",
       },
     });

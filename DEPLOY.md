@@ -1,15 +1,15 @@
-# Rocket Client Template — Deployment Guide
+# Wall Works Hardscape — Deployment Guide
 
-Deploy a new client site in minutes using the AI-powered setup wizard.
+Deploy the Wall Works site using the AI-powered setup wizard.
 
 ## Quick Start (Recommended)
 
 ### Step 1: Clone & Deploy
 
 ```bash
-git clone https://github.com/0nork/rocket-client-template.git client-name-site
-cd client-name-site
-rm -rf .git && git init && git add . && git commit -m "Initial commit from rocket-client-template"
+git clone https://github.com/0nork/rocket-client-template.git wall-works-hardscape
+cd wall-works-hardscape
+rm -rf .git && git init && git add . && git commit -m "Initial commit — Wall Works Hardscape"
 ```
 
 Push to GitHub and deploy on Vercel. Set only **3 environment variables**:
@@ -111,6 +111,6 @@ Clients can update content in two ways:
 1. **Google Sheets** — Edit the spreadsheet directly (changes appear within 5 minutes)
 2. **Admin Dashboard** — Use `/admin/content` to edit through the web interface
 
-## Powered by Rocket+
+## Wall Works Hardscape
 
-Template by [RocketClients.com](https://rocketclients.com) | Part of the [0nork](https://github.com/0nork) ecosystem
+[wallworkshardscape.com](https://wallworkshardscape.com) | Westmoreland County retaining walls & masonry

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { getSiteConfig } from "@/config/site.config";
+import { CLIENT } from "@/config/client.config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,8 +18,8 @@ const geistMono = Geist_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getSiteConfig();
   return {
-    title: config.name || "Rocket Client Site",
-    description: `Professional services by ${config.name || "our team"}. Quality work, fair prices, satisfaction guaranteed.`,
+    title: config.name || CLIENT.seoTitle,
+    description: config.tagline || CLIENT.seoDescription,
   };
 }
 

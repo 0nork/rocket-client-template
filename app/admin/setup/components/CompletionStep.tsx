@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, ExternalLink, Loader2, Rocket, AlertCircle } from "lucide-react";
+import { CheckCircle2, ExternalLink, Loader2, PartyPopper, AlertCircle } from "lucide-react";
 
 interface Props {
   spreadsheetUrl: string;
@@ -31,7 +31,7 @@ export function CompletionStep({ spreadsheetUrl, onFinish }: Props) {
       <div className="text-center space-y-6">
         <div className="flex justify-center">
           <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center">
-            <Rocket className="w-10 h-10 text-green-400" />
+            <PartyPopper className="w-10 h-10 text-green-400" />
           </div>
         </div>
         <h2 className="text-3xl font-bold text-white">You&apos;re all set!</h2>

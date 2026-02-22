@@ -1,4 +1,5 @@
 import { unstable_cache } from "next/cache";
+import { CLIENT } from "./client.config";
 
 export interface SiteConfig {
   name: string;
@@ -17,15 +18,15 @@ export interface SiteConfig {
 }
 
 const DEFAULTS: SiteConfig = {
-  name: "Business Name",
-  phone: "(555) 555-5555",
-  email: "info@example.com",
-  url: "https://example.com",
-  tagline: "Professional Services You Can Trust",
+  name: CLIENT.name,
+  phone: CLIENT.phone,
+  email: CLIENT.email,
+  url: CLIENT.url,
+  tagline: CLIENT.tagline,
   colors: {
-    primary: "#2563eb",
-    secondary: "#1e40af",
-    accent: "#f59e0b",
+    primary: CLIENT.colors.primary,
+    secondary: CLIENT.colors.secondary,
+    accent: CLIENT.colors.accent,
   },
 };
 

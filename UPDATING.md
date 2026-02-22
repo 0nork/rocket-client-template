@@ -36,6 +36,6 @@ Everything else: admin dashboard, setup wizard, core components, lib utilities, 
 
 If you've modified a non-protected file that the template also changed, Git will ask you to resolve the conflict. Standard merge resolution applies.
 
-## Powered by Rocket+
+## Wall Works Hardscape
 
-Template by [RocketClients.com](https://rocketclients.com) | Part of the [0nork](https://github.com/0nork) ecosystem
+[wallworkshardscape.com](https://wallworkshardscape.com) | Westmoreland County retaining walls & masonry

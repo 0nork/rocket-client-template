@@ -14,6 +14,7 @@ import {
   Blocks,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CLIENT } from "@/config/client.config";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
@@ -32,8 +33,8 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-gray-900 text-white min-h-screen flex flex-col">
       <div className="p-4 border-b border-gray-800">
-        <h2 className="font-bold text-lg">Rocket Dashboard</h2>
-        <p className="text-xs text-gray-400 mt-0.5">Client Admin Panel</p>
+        <h2 className="font-bold text-lg">{CLIENT.adminTitle}</h2>
+        <p className="text-xs text-gray-400 mt-0.5">{CLIENT.adminSubtitle}</p>
       </div>
 
       <nav className="flex-1 p-3 space-y-1">

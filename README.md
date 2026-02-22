@@ -1,18 +1,18 @@
-# Rocket Client Template
+# Wall Works Hardscape
 
-A white-label client site template powered by **Google Workspace as CMS**, **Gemini AI** for content generation, **CRO9** for analytics, and **RocketAdd** for CRM integration.
+Professional website for **Wall Works** — expert retaining walls, stone masonry, and hardscape services in **Westmoreland County**.
 
-Clone, configure, deploy. New client sites in ~30 minutes.
+Powered by **Google Workspace as CMS**, **Gemini AI** for content generation, **CRO9** for analytics & SXO behavioral tracking, and CRM integration.
 
 ## Stack
 
-- **Next.js 15** (App Router, React 19, TypeScript)
+- **Next.js 16** (App Router, React 19, TypeScript)
 - **Tailwind CSS 4**
 - **Google Sheets** as content database
 - **Google Drive** for media storage
-- **Gemini AI** for content generation (client's own API key)
-- **CRO9** analytics + behavioral tracking
-- **RocketAdd** CRM OAuth integration
+- **Gemini AI** for content generation
+- **CRO9** analytics + SXO behavioral tracking
+- **CRM** OAuth integration
 
 ## Quick Start
 
@@ -34,8 +34,18 @@ app/           Public pages + admin dashboard + API routes
 components/    Site, admin, and UI components
 lib/           Google, Gemini, CRM, CRO9 integrations
 config/        Site config + Sheets schema
+client/        Client-specific files (protected from template updates)
 ```
 
-## Part of the Rocket+ Ecosystem
+## Features
 
-Built by [RocketClients.com](https://rocketclients.com) | [0nork](https://github.com/0nork)
+- **Onboarding Wizard** — 7-step AI-powered setup at `/admin/setup`
+- **CRO9 Analytics** — Visitor tracking, page views, bounce rate, session duration
+- **SXO Panel** — Scroll depth, rage clicks, dead clicks, form abandonment, AI recommendations
+- **AI Content Generator** — Blog posts, service descriptions, FAQs via Gemini
+- **Custom Apps** — JSON-driven calculators, wizards, and tools at `/tools/[slug]`
+- **Admin Dashboard** — Content editor, media uploader, analytics viewer, settings
+
+## Domain
+
+[wallworkshardscape.com](https://wallworkshardscape.com)
